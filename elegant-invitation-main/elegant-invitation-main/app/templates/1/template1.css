@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Great+Vibes&display=swap');
+
+@font-face {
+    font-family: 'Runethia';
+    src: url('https://framika-wedding.pages.dev/template1/assets/fonts/Runethia.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Candlescript';
+    src: url('https://ananya-vartika.invitationmedia.in/fonts/Candlescript.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+.font-script,
+h1.font-script,
+h2.font-script,
+h3.font-script,
+.couple-names {
+    font-family: 'Runethia', 'Candlescript', 'Great Vibes', cursive !important;
+}
+
+.font-serif-display {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-weight: 400;
+}
+
+.font-cinzel {
+    font-family: 'Cinzel', serif !important;
+    letter-spacing: 0.15em;
+}
+
+.text-rose {
+    color: #b62039 !important;
+}
+
+.text-rose-deep {
+    color: #791526 !important;
+}
+
+.text-gold {
+    color: #b8860b !important;
+}
+
+.text-gold-soft {
+    color: #c9996e !important;
+}
+
+.bg-cream {
+    background-color: #FAF7F2 !important;
+}
+
+.shadow-elegant {
+    box-shadow: 0 10px 30px rgba(122, 45, 45, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.border-gold-soft {
+    border-color: rgba(212, 175, 55, 0.5) !important;
+}
+
+/* ── Scratch Card Crackle Flyer Popup ── */
+.flyer-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483647;
+    background: rgba(30, 8, 14, 0.76);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.flyer-backdrop.show {
+    opacity: 1;
+}
+
+.flyer-card {
+    background: linear-gradient(160deg, #fffdfa 0%, #fdf5ea 100%);
+    border: 2px solid #d4af37;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    max-width: 440px;
+    width: 100%;
+    max-height: calc(100dvh - 2.5rem);
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.45), 0 0 50px rgba(212, 175, 55, 0.35);
+    position: relative;
+    transform: scale(0.8) translateY(20px);
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.flyer-backdrop.show .flyer-card {
+    animation: celebrationPop 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.flyer-card::before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    right: 9px;
+    bottom: 9px;
+    border: 1px dashed rgba(201, 153, 110, 0.45);
+    border-radius: 14px;
+    pointer-events: none;
+}
+
+.flyer-ornament {
+    font-family: 'Cinzel', serif !important;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    color: #b8860b;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+.flyer-names {
+    font-family: 'Runethia', 'Candlescript', 'Great Vibes', cursive !important;
+    font-size: 3.4rem !important;
+    color: #7a2d2d;
+    line-height: 1.12;
+    text-shadow: 0 1px 3px rgba(122, 45, 45, 0.12);
+}
+
+@media (min-width: 640px) {
+    .flyer-names {
+        font-size: 4rem !important;
+    }
+}
+
+.flyer-divider {
+    width: 65px;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    margin: 0.9rem auto;
+}
+
+.flyer-date {
+    font-family: 'Cinzel', serif !important;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #7a2d2d;
+    letter-spacing: 0.18em;
+    margin: 0.5rem 0;
+    text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+    .flyer-date {
+        font-size: 1.5rem;
+    }
+}
+
+.flyer-message {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: #6b4030;
+    line-height: 1.45;
+    margin: 0.6rem 0 1.1rem;
+}
+
+.flyer-badge {
+    display: inline-block;
+    background: #fef9ee;
+    border: 1px solid rgba(212, 175, 55, 0.55);
+    color: #7a2d2d;
+    font-family: 'Cinzel', serif !important;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    padding: 7px 18px;
+    border-radius: 50px;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 2px 8px rgba(122, 45, 45, 0.05);
+}
+
+.flyer-btn {
+    background: linear-gradient(135deg, #7a2d2d, #9e2a2b);
+    color: #fff8f0;
+    font-family: 'Cinzel', serif !important;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(122, 45, 45, 0.35);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.flyer-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 22px rgba(122, 45, 45, 0.45);
+}
+
+.flyer-btn:active {
+    transform: scale(0.97);
+}
+
+@keyframes celebrationPop {
+    0% {
+        transform: scale(0.6) rotate(-3deg) translateY(35px);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.04) rotate(0.8deg) translateY(-5px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1) rotate(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+.scratch-card {
+    /* Scratch card stays completely static */
+}
+
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUpText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ambientPulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+@keyframes drift {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+
+.animate-drift {
+    animation: drift 6s ease-in-out infinite;
+}
+
+/* ── Envelope Petal Float ── */
+@keyframes floatDown {
+    0% {
+        transform: translateY(-5vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0.85;
+    }
+
+    90% {
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: translateY(105vh) translateX(30px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.petal-item {
+    position: absolute;
+    top: -10vh;
+    pointer-events: none;
+    opacity: 0;
+    animation: floatDown linear infinite;
+    z-index: 1;
+}
+
+/* ── Envelope Button & Monogram ── */
+.image-envelope-btn {
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    perspective: 1000px;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+    display: inline-block;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.image-envelope-btn:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+
+.image-envelope-btn:active {
+    transform: scale(0.98);
+}
+
+.image-envelope-btn.opening {
+    transform: scale(1.18) rotate(-1.5deg);
+    filter: brightness(1.12) drop-shadow(0 30px 60px rgba(76, 5, 25, 0.55));
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+}
+
+.image-envelope-img {
+    width: 290px;
+    max-width: 86vw;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 25px 45px rgba(76, 5, 25, 0.38)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+@media (min-width: 480px) {
+    .image-envelope-img {
+        width: 340px;
+    }
+}
+
+@media (min-width: 640px) {
+    .image-envelope-img {
+        width: 380px;
+    }
+}
+
+@media (min-width: 768px) {
+    .image-envelope-img {
+        width: 420px;
+    }
+}
+
+.image-envelope-seal {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.image-envelope-monogram {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+    transition: transform 0.3s ease;
+    animation: monogramPulse 3.5s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+    .image-envelope-monogram {
+        width: 86px;
+        height: 86px;
+    }
+}
+
+@keyframes monogramPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+    }
+
+    50% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 8px 20px rgba(212, 175, 55, 0.75));
+    }
+}
+
+.seal-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid rgba(212, 175, 55, 0.85);
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.5);
+    animation: sealPulse 2.4s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+    pointer-events: none;
+}
+
+@media (min-width: 640px) {
+    .seal-ripple {
+        width: 96px;
+        height: 96px;
+    }
+}
+
+@keyframes sealPulse {
+    0% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    70% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.6);
+    }
+}
+
+/* ── Bottom Text Section ── */
+.envelope-text-wrapper {
+    margin-top: 2.25rem;
+    text-align: center;
+    z-index: 10;
+    animation: fadeUpText 1s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.envelope-title {
+    font-size: 3.2rem;
+    color: #7a2d2d;
+    letter-spacing: 0.02em;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 0 1px 4px rgba(76, 5, 25, 0.15);
+}
+
+@media (min-width: 640px) {
+    .envelope-title {
+        font-size: 3.8rem;
+    }
+}
+
+.envelope-subtitle {
+    margin-top: 0.35rem;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: rgba(122, 45, 45, 0.85);
+    letter-spacing: 0.04em;
+}
+
+@media (min-width: 640px) {
+    .envelope-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+/* ── Ganesha glow ── */
+@keyframes ganeshGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.4));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 22px rgba(212, 175, 55, 0.9));
+    }
+}
+
+.ganesh-glow {
+    animation: ganeshGlow 3s ease-in-out infinite;
+}
+
+/* ── Inside Continuous Petals ── */
+@keyframes insidePetalFall {
+    0% {
+        transform: translateY(-10vh) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.85;
+    }
+
+    85% {
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: translateY(110vh) translateX(50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.inside-petal {
+    position: absolute;
+    top: -10vh;
+    pointer-events: none;
+    opacity: 0;
+    animation: insidePetalFall linear infinite;
+    filter: drop-shadow(0 2px 4px rgba(122, 45, 45, 0.15));
+}
+
+/* ── Music Button ── */
+#music-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(122, 45, 45, 0.92);
+    backdrop-filter: blur(8px);
+    color: #fff8f0;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    border: 1px solid rgba(201, 153, 110, 0.4);
+    padding: 10px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(122, 45, 45, 0.4);
+    transition: all 0.3s ease;
+}
+
+#music-btn:hover {
+    background: rgba(122, 45, 45, 1);
+    transform: translateY(-2px);
+}
+
+#music-btn .music-icon {
+    font-size: 1rem;
+}
+
+#music-btn.playing .music-icon {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Scroll Reveal ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-in {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .petal-item,
+    .inside-petal,
+    .image-envelope-monogram,
+    .seal-ripple,
+    .ganesh-glow,
+    .animate-drift {
+        animation: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
